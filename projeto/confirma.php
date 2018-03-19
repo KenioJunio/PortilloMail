@@ -10,15 +10,15 @@
 	$assunto = $_REQUEST['assunto'];
 	$mensagem = $_REQUEST['mensagem'];
 	$slug = criarSlug($assunto);
-	if($grupo = "todos"){
-		$grupo = 0;
-	}
+// 	if($grupo = "todos"){
+// 		$grupo = 0;
+// 	}
 	
 	$nomeGrupo = "";
 
 	if($grupo > 0){
 		$strSQL = "SELECT titulo FROM grupos WHERE grupo = '" . $grupo . "'"; 
-		$rs = mysqli_query($con,$sql);
+		$rs = mysqli_query($con,$strSQL);
 		while($row = mysqli_fetch_array($rs)){
 			$nomeGrupo = $row["titulo"];
 		}
